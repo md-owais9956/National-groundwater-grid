@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro-Analytics Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><i class="fas fa-droplet"></i> Hydro-Analytics Pro</div>
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-bar" placeholder="Filter Stations...">
+        </div>
+    </nav>
+
+    <main>
+        <section id="prediction-output" class="hidden">
+            <div class="result-card">
+                <h1 id="res-location">STATION</h1>
+                <div class="metrics-grid">
+                    <div class="metric"><i class="fas fa-chart-line"></i><span>Live Estimate</span><h2 id="res-level">--m</h2></div>
+                    <div class="metric highlight"><i class="fas fa-forward"></i><span>1-Year Forecast</span><h2 id="res-forecast">--m</h2></div>
+                    <div class="metric highlight-wpi"><i class="fas fa-percentage"></i><span>WPI Score</span><h2 id="res-wpi">--%</h2></div>
+                    <div class="metric"><i class="fas fa-cloud-sun"></i><span>Humidity</span><h2 id="res-hum">--%</h2></div>
+                    <div class="metric"><i class="fas fa-thermometer-half"></i><span>Temp</span><h2 id="res-temp">--°C</h2></div>
+                </div>
+                <div class="recommendation"><p id="res-suggest">--</p></div>
+            </div>
+        </section>
+
+        <section class="station-section">
+            <h2><i class="fas fa-database"></i> National Groundwater Grid</h2>
+            <div id="station-list" class="grid-container"></div>
+        </section>
+    </main>
+
+    <div id="loader-overlay" class="hidden"><div class="loader"></div><p>Calculating Trends...</p></div>
+    <script src="script.js"></script>
+</body>
+</html>
